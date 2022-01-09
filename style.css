@@ -1,5 +1,7 @@
 :root {
   font-size: 16px;
+  font-family: "Saira Condensed", sans-serif;
+  --transition-speed: 0.2s;
 }
 
 * {
@@ -18,21 +20,75 @@ body {
 
 a,
 a.visited {
+  letter-spacing: 0.1rem;
   color: midnightblue;
   text-decoration: none;
 }
 
 li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   list-style: none;
+  padding: 1rem 2rem;
 }
 
 .navbar {
+  z-index: 5;
   background-color: white;
-  font-size: 1rem;
 
   min-width: 100vw;
 
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+  box-shadow: 0 0 5rem 0 rgba(0, 0, 0, 0.5);
+}
+
+i {
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: midnightblue;
+}
+
+.submenu,
+.submenu2 {
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-speed) ease;
+}
+
+.sublink,
+.sublink2 {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.submenu:hover,
+.wrapper .navlink:hover + ul {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.submenu2 {
+  position: absolute;
+  height: 100%;
+  left: 100%;
+  margin-top: 0;
+
+  justify-content: center;
+}
+
+.submenu2:hover,
+.sublink:hover + ul {
+  opacity: 1;
+  pointer-events: all;
 }
