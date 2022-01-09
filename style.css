@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+
+  background-image: url("./media/susan-wilkinson-ztA9VXg21ZM-unsplash.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100vw;
+}
+
+a,
+a.visited {
+  color: midnightblue;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar {
+  background-color: white;
+  font-size: 1rem;
+
+  min-width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  /* position: relative; */
+}
+
+.navlink {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+
+.projsubmenu,
+.blogsubmenu {
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  margin-top: 1rem;
+}
+
+.sublink {
+  padding: 0.5rem 1rem;
+}
