@@ -2,7 +2,7 @@
   font-size: 16px;
   font-family: "Saira Condensed", sans-serif;
   --transition-speed: 0.4s;
-  --nav-hover-color: rgba(8, 61, 119, 0.7);
+  --nav-hover-color: rgba(62, 110, 161, 0.6);
   --prim-color: #7b9ea8;
   --sec-color: #006e90;
 }
@@ -23,30 +23,51 @@ body {
 
 a,
 a.visited {
-  letter-spacing: 0.1rem;
   color: var(--sec-color);
   text-decoration: none;
-  transition: all 0.4s ease;
+  transition: all var(--transition-speed) ease;
   width: 100%;
   height: 100%;
   text-align: center;
-
-  margin: auto;
 }
 
 .navbar {
-  z-index: 5;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 1);
   position: relative;
 
   width: 100vw;
-  height: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
 
-  box-shadow: 0 0 5rem 0 rgba(0, 0, 0, 0.5);
+.buttonswrapper {
+  display: flex;
+}
+
+#logohomewrap {
+  width: 20vw;
+}
+
+#logo {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.menuwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+#contactwrap {
+  margin-right: 5vw;
+  width: 15vw;
 }
 
 .navbar li {
@@ -54,25 +75,33 @@ a.visited {
   align-items: center;
   justify-content: center;
   list-style: none;
-  margin: auto;
+  padding: 0.75rem;
+  width: 100%;
+  transition: all var(--transition-speed) ease;
+}
+
+.navlink {
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
 }
 
 .navbar li:hover {
   background-color: var(--nav-hover-color);
 }
 
-.navbar li:hover > a {
+i {
+  display: flex;
+  color: var(--prim-color);
+  transition: all var(--transition-speed) ease;
+}
+
+.navbar li:hover > a,
+.navbar li:hover i {
   color: white;
 }
 
-i {
-  display: inline-block;
-  /* margin-left: 0.5rem; */
-  color: var(--prim-color);
-}
-
-.wrapper {
-  width: 100%;
+.linkwrapper {
+  width: 10rem;
   position: relative;
 }
 
@@ -89,7 +118,7 @@ i {
 .submenu,
 .submenu2 {
   background-color: white;
-  width: 50%;
+  width: 75%;
 
   display: flex;
   flex-direction: column;
@@ -102,32 +131,17 @@ i {
 }
 
 .submenu2 {
-  top: 0;
   width: 100%;
   transform: translateX(90%);
-}
-
-.navlink,
-.sublink,
-.sublink2 {
-  padding: 0.75rem;
-  height: 100%;
-  width: 100%;
-  transition: all var(--transition-speed) ease;
+  position: absolute;
+  top: 0;
 }
 
 .submenu:hover,
-.wrapper .navlink:hover + ul {
+.navlink:hover + ul {
   transform: translateY(0);
   opacity: 1;
   pointer-events: all;
-}
-
-.submenu2 {
-  position: absolute;
-  margin-top: 0;
-
-  justify-content: center;
 }
 
 .submenu2:hover,
