@@ -1,10 +1,16 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
 :root {
   font-size: 16px;
   font-family: "Saira Condensed", sans-serif;
   --transition-speed: 0.4s;
-  --nav-hover-color: rgba(62, 110, 161, 0.6);
+  --nav-hover-color: rgba(23, 114, 150, 0.5);
   --prim-color: #7b9ea8;
   --sec-color: #006e90;
+  --menu-color: rgb(255, 255, 255);
 }
 
 * {
@@ -32,7 +38,7 @@ a.visited {
 }
 
 .navbar {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--menu-color);
   position: relative;
 
   width: 100vw;
@@ -97,7 +103,7 @@ i {
 
 .navbar li:hover > a,
 .navbar li:hover i {
-  color: white;
+  color: var(--menu-color);
 }
 
 .linkwrapper {
@@ -105,19 +111,18 @@ i {
   position: relative;
 }
 
-.subwrapper {
-  height: 100%;
+.dropwrapper {
   position: relative;
   width: 100%;
 }
 
-.submenu {
+.dropmenu {
   transform: translateY(-10%);
 }
 
-.submenu,
-.submenu2 {
-  background-color: white;
+.dropmenu,
+.dropmenu2 {
+  background-color: var(--menu-color);
   width: 75%;
 
   display: flex;
@@ -130,22 +135,22 @@ i {
   transition: all var(--transition-speed) ease;
 }
 
-.submenu2 {
+.dropmenu2 {
   width: 100%;
   transform: translateX(90%);
   position: absolute;
   top: 0;
 }
 
-.submenu:hover,
+.dropmenu:hover,
 .navlink:hover + ul {
   transform: translateY(0);
   opacity: 1;
   pointer-events: all;
 }
 
-.submenu2:hover,
-.sublink:hover + ul {
+.dropmenu2:hover,
+.droplink:hover + ul {
   transform: translateX(100%);
   opacity: 1;
   pointer-events: all;
